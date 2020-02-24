@@ -15,7 +15,6 @@ class Directory extends Component {
     }
 
     render() {
-        this.state.sections.map(section => console.log(section));
         return(
             <div className="directory-menu">
                {
