@@ -12,6 +12,7 @@ import Header from './components/header/header.component';
 import HomePage from './pages/homepage/homepage.component';
 import ShopPage from './pages/shoppage/shoppage.component';
 import AccountPage from './pages/accountpage/accountpage.component';
+import CheckoutPage from './pages/checkoutpage/checkoutpage.component';
 
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
@@ -50,8 +51,9 @@ class App extends Component {
         <Header />
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route exact path="/shop" component={ShopPage} />
+          <Route path="/shop" component={ShopPage} />
           <Route exact path="/signin" render={() => this.props.currentUser ? <Redirect to="/" /> : <AccountPage />} />
+          <Route exact path="/checkout" component={CheckoutPage} />
         </Switch>
       </div>
     );
