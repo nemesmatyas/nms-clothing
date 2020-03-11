@@ -15,3 +15,21 @@ export const addItemToCart = (cartItems, cartItemToAdd) => {
 
     return [...cartItems, { ...cartItemToAdd, quantity: 1}]
 }
+
+/**
+ * Decrease the quantity of a cart item, if the user clicks on the left arrow next to the quantity on the Checkout Page
+ * Checks if the cartItemToRemove is already part of the existing cartItems, and checks its quantity
+ * If the quantity is 1, we remove it from the cart
+ * If not 1, we remove the quantity by 1
+ */
+export const removeItemFromCart = (cartItems, cartItemToRemove) => {
+    const existingCartItem = cartItems.find(cartItem => cartItem.id === cartItemToRemove.id)
+
+    if (existingCartItem.quantity === 1) {
+        return cartItems.filter(cartItem => cartItem.id !== cartItemToRemove.id)
+    }
+    
+    return cartItems.map(cartItem => cartItem.id === cartItemToRemove.id 
+                                        ? { ...cartItem, quantity: cartItem.quantity - 1} 
+                                        : cartItem)
+}
