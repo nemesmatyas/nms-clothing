@@ -5,6 +5,7 @@ import storage from 'redux-persist/lib/storage'; // The built-in local storage o
 import userReducer from './user/user-reducer';
 import cartReducer from './cart/cart-reducer';
 import directoryReducer from './directory/directory-reducer';
+import shopReducer from './shop/shop-reducer';
 
 /**
  * Configuration for Redux Persist
@@ -21,7 +22,8 @@ const persistConfig = {
 const rootReducer = combineReducers({
     user: userReducer,
     cart: cartReducer,
-    directory: directoryReducer
+    directory: directoryReducer,
+    shop: shopReducer
 });
 
 export default persistReducer(persistConfig, rootReducer);
