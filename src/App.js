@@ -39,6 +39,9 @@ class App extends Component {
         setCurrentUser(null)
       }
     })
+
+    // From the collection items, we only need the title and the items
+    //addCollectionAndDocuments('collections', collectionsArr.map(({ title, items }) => ({ title, items })));
   }
 
   componentWillUnmount() {
@@ -67,6 +70,7 @@ class App extends Component {
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser
+  //collectionsArr: selectCollectionsForPreview
 })
 
 const mapDispatchToProps = dispatch => ({
