@@ -7,4 +7,14 @@
     .title {
         margin: 10px 0;
     }
+
+    .buttons-container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    @media screen and (max-width: 800px) {
+        width: 90%;
+        margin-bottom: 100px;
+    }
 }
